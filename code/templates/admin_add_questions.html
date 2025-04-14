@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Add Questions - Quiz Master</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css">
+</head>
+<body>
+    <div class="container mt-5">
+        <h2>Add Questions to Quiz ID: {{ quiz.id }}</h2>
+        
+        <form method="POST">
+            
+            <div class="mb-3">
+                <label for="question" class="form-label">Question</label>
+                <textarea name="question" class="form-control" required></textarea>
+            </div>
+            
+            <div class="mb-3">
+                <label class="form-label">Options</label>
+                <input type="text" name="option1" class="form-control mb-2" placeholder="Option 1" required>
+                <input type="text" name="option2" class="form-control mb-2" placeholder="Option 2" required>
+                <input type="text" name="option3" class="form-control mb-2" placeholder="Option 3" required>
+                <input type="text" name="option4" class="form-control mb-2" placeholder="Option 4" required>
+            </div>
+            
+            <div class="mb-3">
+                <label for="correct_option" class="form-label">Correct Option (1-4)</label>
+                <input type="number" name="correct_option" class="form-control" min="1" max="4" required>
+            </div>
+            
+            <div class="d-flex justify-content-between">
+                <button type="submit" class="btn btn-success">Add Question</button>
+                <a href="{{ url_for('admin_quizzes') }}" class="btn btn-secondary">Save & Exit</a>
+            </div>
+
+        </form>
+    </div>
+</body>
+</html>
